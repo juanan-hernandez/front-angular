@@ -27,4 +27,7 @@
       margin-bottom: 0;
     }
   }
-  
+
+#navbar-menu {
+  margin: auto;
+}
