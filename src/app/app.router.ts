@@ -1,14 +1,11 @@
-// import que necesitamos para rutas
-import { RouterModule, Routes } from '@angular/router';
-
-// cada vez que queramos enrutar un componente tenemos que ponerlo aqui
 import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+import {ContactoComponent} from './contacto/contacto.component';
 
-// constante donde almacenamos las rutas
-const APP_ROUTES: Routes = [
-  // ruta + componente asociado a la ruta
+const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  // redirecTo -> si no coincide con ninguna ruta nos lleva a la home
+  { path: 'contacto', component: ContactoComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
-export const app_routing = RouterModule.forRoot(APP_ROUTES);
+
+export const app_routing = RouterModule.forRoot(appRoutes);
