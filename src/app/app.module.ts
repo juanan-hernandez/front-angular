@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HeaderComponent } from './header/header.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { HttpClientModule } from  '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     BrowserModule,
     app_routing,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
