@@ -3,19 +3,19 @@
   <div class="banner">
     <div class="container">
       <h1 class="logo-font" style="text-align: center; font-weight: bold;">Juanan Hernandez </h1>
-      <p style="text-align: center; font-weight: bold; font-style: italic;">'The starting point of all achievement is desire'</p>
-      <p style="text-align: center">Napoleon Hill</p>
     </div>
   </div>
 
-  <div id="content">
-    <h1>Mi timeline</h1>
-
-    <div id="div-content">
-      <ul class="timeline">
-        <li class="event" data-date="2011 - 2017">
-          <h3>Ingeniería Informática y Administración de Empresas</h3>
-          <p>Universidad Carlos III de Madrid</p>
+  <div class="main-container">
+    <section id="timeline" class="timeline-outer">
+      <div class="container" id="content">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <h1 class="blue-text lighten-1 header">Mi timeline</h1>
+      <!--<ul class="timeline">
+        <li *ngFor="let experience of this.experiences" class="event" data-date={{experience.init_date}}>
+          <h3>{{experience.role}}s</h3>
+          <p>{{experience.company}}</p>
         </li>
         <li class="event" data-date="jul. 16' - sep. 16'">
           <h3>Internship</h3>
@@ -37,9 +37,24 @@
           <h3>Software developer</h3>
           <p>BBVA Next Technologies</p>
         </li>
-
       </ul>
+      -->
+
+
+      <ul class="timeline">
+        <li *ngFor="let experience of this.experiences" class="event">
+          <h3>{{experience.role}}</h3>
+          <h5>{{experience.company}}</h5>
+          <p style="font-style: italic">{{this.getMonthAndYear(experience.init_date)}} / {{this.getMonthAndYear(experience.end_date)}}</p>
+          <p>{{experience.description}}</p>
+        </li>
+      </ul>
+
     </div>
+  </div>
+  </div>
+    </section>
+
   </div>
 
 </div>

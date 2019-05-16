@@ -9,21 +9,31 @@ import {HttpClient} from '@angular/common/http';
 export class HomeComponent implements OnInit {
 
   API_URL  =  'http://localhost:8000';
-  experiences: any = null;
+  experiences: {} ;
 
   constructor(private  http:  HttpClient) {}
 
   getExperiences() {
-    this.http.get(`${this.API_URL}/api/`).subscribe(apiData => (this.experiences = apiData));
-    // x => console.log(x)
+    return this.http.get(`${this.API_URL}/api/`).subscribe((res) => {
+      this.experiences = res;
+      // console.log(this.experiences);
+      });
+  }
+
+  getMonthAndYear(dateString) {
+    if (dateString === null) {
+      return 'act.';
+    } else {
+      const date = new Date(dateString);
+      const month = date.toLocaleString('es-es', {month: 'long'});
+      const year = date.getFullYear();
+      return month + '-' + year;
+    }
   }
 
   ngOnInit() {
-    // TODO arreglar esto...
     this.getExperiences();
-    console.log(this.experiences);
-    this.getExperiences();
-    console.log(this.experiences);
+    // this.getMonthAndYear('2019-02-01');
   }
 
 }
