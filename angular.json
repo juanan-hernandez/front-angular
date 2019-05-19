@@ -34,15 +34,10 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+            "production-es": {
               "optimization": true,
               "outputHashing": "all",
+              "outputPath": "dist/browser/es/",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -50,13 +45,40 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
+              "fileReplacements": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "baseHref": "/es/",
+              "i18nFile": "src/locale/messages.es.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es",
+              "i18nMissingTranslation": "error"
+            },
+            "production-en": {
+              "optimization": true,
+              "outputHashing": "all",
+              "outputPath": "dist/browser/en/",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "baseHref": "/en/",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -66,8 +88,11 @@
             "browserTarget": "my-app:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "my-app:build:production"
+            "es": {
+              "browserTarget": "my-app:build:production-es"
+            },
+            "en": {
+              "browserTarget": "my-app:build:production-en"
             }
           }
         },

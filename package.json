@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve --host front-angular.herokuapp.com",
     "dev": "ng serve",
     "build": "ng build",
     "test": "ng test",
