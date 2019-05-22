@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve 0.0.0.0 --port 5000",
+    "start": "node server.js",
     "dev": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "preinstall": "npm install -g @angular/cli",
     "postinstall": "ng build --aot --prod",
     "lint": "ng lint",
     "e2e": "ng e2e"
