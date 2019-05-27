@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_endpoint: 'backend-django.herokuapp.com'
+  API_endpoint: 'http://backend-django.herokuapp.com'
 };
